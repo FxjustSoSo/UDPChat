@@ -1,6 +1,7 @@
 ﻿#include "processdata.h"
 #include "udp.h"
 #include "Universal.h"
+#include <windows.h>
 
 ProcessData::ProcessData(QObject *parent) : QObject(parent)
 {

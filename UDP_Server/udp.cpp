@@ -16,13 +16,15 @@ void UDP::init()
     connect(udpRecv,&QUdpSocket::readyRead,this,&UDP::slotRecv);
 }
 
+static int i = 0;
 /*接收*/
 void UDP::slotRecv()
 {
     while (udpRecv->hasPendingDatagrams())
     {
         QNetworkDatagram datagram = udpRecv->receiveDatagram();
-        cout<<QString(datagram.data().data());
+        ++i;
+        cout<<QString(datagram.data().data()) << " " << i;
         //processTheDatagram(datagram);
     }
 }
